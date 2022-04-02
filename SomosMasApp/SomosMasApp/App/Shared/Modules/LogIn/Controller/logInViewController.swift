@@ -48,7 +48,7 @@ class logInViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
-        viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
+        /*viewModel.validateAccess(email: emailTextField.text, password: passwordTextField.text) { confirmAccess, errorMessage in
             if !confirmAccess {
                 self.warningLabel.text = errorMessage!
                 self.warningLabel.isHidden = false
@@ -56,7 +56,10 @@ class logInViewController: UIViewController {
                 self.warningLabel.isHidden = true
                 self.userValidation()
             }
-        }
+        }*/
+        let tabBarController = TabBarViewController()
+        tabBarController.modalPresentationStyle = .overFullScreen
+        self.present(tabBarController, animated: true, completion: nil)
     }
     
     func userValidation() {
